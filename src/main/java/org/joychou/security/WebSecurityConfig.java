@@ -67,15 +67,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors();
 
         // spring security login settings
-        http.authorizeRequests()
-                .antMatchers("/css/**", "/js/**").permitAll() // permit static resources
-                .anyRequest().authenticated().and() // any request authenticated except above static resources
-                .formLogin().loginPage("/login").permitAll() // permit all to access /login page
-                .successHandler(new LoginSuccessHandler())
-                .failureHandler(new LoginFailureHandler()).and()
-                .logout().logoutUrl("/logout").permitAll().and()
-                // tomcat默认JSESSION会话有效时间为30分钟，所以30分钟不操作会话将过期。为了解决这一问题，引入rememberMe功能。
-                .rememberMe();
+//        http.authorizeRequests()
+//                .antMatchers("/css/**", "/js/**").permitAll() // permit static resources
+//                .anyRequest().authenticated().and() // any request authenticated except above static resources
+//                .formLogin().loginPage("/login").permitAll() // permit all to access /login page
+//                .successHandler(new LoginSuccessHandler())
+//                .failureHandler(new LoginFailureHandler()).and()
+//                .logout().logoutUrl("/logout").permitAll().and()
+//                // tomcat默认JSESSION会话有效时间为30分钟，所以30分钟不操作会话将过期。为了解决这一问题，引入rememberMe功能。
+//                .rememberMe();
     }
 
     /**

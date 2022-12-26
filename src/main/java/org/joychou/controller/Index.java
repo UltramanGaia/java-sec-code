@@ -45,8 +45,6 @@ public class Index {
 
     @RequestMapping("/index")
     public static String index(Model model, HttpServletRequest request) {
-        String username = request.getUserPrincipal().getName();
-        model.addAttribute("user", username);
         return "index";
     }
 }
